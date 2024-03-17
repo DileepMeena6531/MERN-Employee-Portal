@@ -1,0 +1,70 @@
+<% layout('layouts/boilerplate.ejs') -%>
+
+    <div class="row col-6 offset-3 mt-3">
+        <h4>Create Employee</h4>
+        <form method="post" action="/employee" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="dileep" name="name" id="name" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="dileep@123" name="email" id="email" required>
+            </div>
+    
+            <div class="mb-3 row ">
+            <div class="mb-3 col-md-6">
+                <label for="mobile_no" class="form-label">Mobile No</label>
+                <input type="number" class="form-control" placeholder="7891******" name="mobile_no" id="mobile_no" required>
+            </div>
+    
+            <div class="mb-3 col-md-6">
+                <label for="designation" class="form-label">Designation</label>
+                <select class="form-select" name="designation" id="designation" required>
+                    <option>HR</option>
+                    <option>Manager</option>
+                    <option>Sales</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="row mt-3">
+            <div class="mb-3 col-md-6">
+                <label class="form-label">Gender</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="Female" required>
+                    <label class="form-check-label" for="female" >Female</label>
+                </div>
+            </div>
+    
+            <div class="mb-3 col-md-6">
+                <label class="form-label">Course</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="course" id="mca" value="MCA" required>
+                    <label class="form-check-label" for="mca">MCA</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="course" id="bca" value="BCA" required>
+                    <label class="form-check-label" for="bca">BCA</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="course" id="bsc" value="BSC" required>
+                    <label class="form-check-label" for="bsc">BSC</label>
+                </div>
+            </div>
+        </div>
+    
+    
+            <div class="mb-3">
+                <label for="img" class="form-label">Image</label>
+                <input type="file" class="form-control" name="img" id="img">
+            </div>
+            
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </form>
+        </div>

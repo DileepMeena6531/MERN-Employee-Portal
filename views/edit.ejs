@@ -1,0 +1,70 @@
+<% layout('layouts/boilerplate.ejs') -%>
+
+    <div class="row col-6 offset-3 mt-3">
+        <h4>Employee Edit</h4>
+    <form method="post" action="/employee/<%=detail._id%>?_method=PUT" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" name="name" id="name" value="<%= detail.name %>">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email"  value="<%= detail.email %>">
+        </div>
+
+        <div class="mb-3 row ">
+        <div class="mb-3 col-md-6">
+            <label for="mobile_no" class="form-label">Mobile No</label>
+            <input type="number" class="form-control" name="mobile_no" id="mobile_no"  value="<%= detail.mobile_no %>">
+        </div>
+
+        <div class="mb-3 col-md-6">
+            <label for="designation" class="form-label">Designation</label>
+            <select class="form-select" name="designation" id="designation">
+                <option value="HR" <% if(detail.designation === 'hr') { %>selected<% } %>>HR</option>
+                <option value="Manager" <% if(detail.designation === 'manager') { %>selected<% } %>>Manager</option>
+                <option value="sales" <% if(detail.designation === 'sales') { %>selected<% } %>>Sales</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="Male" <% if(detail.gender === 'Male') { %>checked<% } %>>
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="Memale" <% if(detail.gender === 'Female') { %>checked<% } %>>
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+
+        <div class="mb-3 col-md-6">
+            <label class="form-label">Course</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="course" id="mca" value="MCA" <% if(detail.course === 'MCA') { %>checked<% } %>>
+                <label class="form-check-label" for="mca">MCA</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="course" id="bca" value="BCA" <% if(detail.course === 'BCA') { %>checked<% } %>>
+                <label class="form-check-label" for="bca">BCA</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="course" id="bsc" value="BSC" <% if(detail.course === 'BSC') { %>checked<% } %>>
+                <label class="form-check-label" for="bsc">BSC</label>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="mb-3">
+            <label for="img" class="form-label">Image</label>
+            <input type="file" class="form-control" name="img" id="img">
+        </div>
+        
+        <button type="submit" class="btn btn-dark">Update</button>
+      </form>
+    </div>

@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+}
+
+.f-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

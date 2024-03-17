@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate.ejs') -%>
+
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">unique_id</th>
+          <th scope="col">Image</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile No</th>
+          <th scope="col">Designation</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Course</th>
+          <th scope="col">Create date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <% let rowNumber = 1; %>
+      <% for(detail of allDetail){ %>
+      <tbody>
+        <tr>
+          <th scope="row"><%= rowNumber++ %></th>
+          <td><img src="<%= detail.img.url %>" style="height: 50px; width: 80px;"></td>
+          <td><%=detail.name %></td>
+          <td><%=detail.email %></td>
+          <td><%=detail.mobile_no %></td>
+          <td><%=detail.designation %></td>
+          <td><%=detail.gender %></td>
+          <td><%=detail.course %></td>
+          <td><%= detail.createdAt.toLocaleString('en-IN', { year: 'numeric', month: 'long', day: 'numeric'}) %></td>
+          <td>
+            <form method="get" action="/employee/<%=detail.id%>/edit">
+              <button class="btn">Edit</button>
+          </form>
+          <form method="post" action="/employee/<%=detail.id%>?_method=DELETE">
+            <button class="btn">Delete</button>
+        </form>
+
+          </td>
+        </tr>
+      </tbody>
+      <% } %>
+    </table>
